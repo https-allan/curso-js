@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
 :root {
     --primary-color: rgb(17, 86, 102);
-    --primary-color-dark: rgb(9, 48, 56);
+    --primary-color-darker: rgb(9, 48, 56);
 }
 
 * {
     box-sizing: border-box;
-    outline: none;
+    outline: 0;
 }
 
 body {
@@ -42,7 +42,7 @@ form input {
 }
 
 form input:focus {
-    outline: 1px solid var(--primary-color) ;
+    outline: 1px solid var(--primary-color);
 }
 
 form button {
@@ -57,5 +57,15 @@ form button {
 }
 
 form button:hover {
-    background:  var(--primary-color-dark);
+    background: var(--primary-color-darker);
+}
+
+.paragrafo-resultado,
+.bad {
+    background: rgb(109, 255, 182);
+    padding: 10px 20px;
+}
+
+.bad {
+    background: rgb(255, 150, 150);
 }
