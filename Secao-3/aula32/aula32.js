@@ -1,13 +1,9 @@
-// ... rest, ... spread
-
 const numeros = [
-    [1, 2, 3], // 0
-    [4, 5, 6], // 1
-    [7, 8, 9]  // 2
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ];
 
-//          0                     1
-//      0   1     2       3       4      5 
-const [[um, dois, tres], [quatro, cinco, seis]] = numeros;
+const [lista1, lista2, lista3] = numeros;
 
-console.log(um, dois, tres);
+console.log(lista2[2])
