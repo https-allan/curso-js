@@ -59,11 +59,3 @@ form button {
 form button:hover {
     background:  var(--primary-color-dark);
 }
-
-p {
-    font-size: 3em;
-}
-
-.pausado {
-    color: #ff0000;
-}
