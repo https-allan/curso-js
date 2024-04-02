@@ -49,6 +49,7 @@ document.addEventListener('click', function(e) {
 
      if(elemento.classList.contains('apagar')){
           elemento.parentElement.remove();
+          saveTask();
      }
 })
 
@@ -62,3 +63,14 @@ function saveTask() {
      const tarefasJson = JSON.stringify(listaDeTarefas);
      localStorage.setItem('tarefas', tarefasJson);
 }
+
+function addTaskSaves() {
+     const tarefas = localStorage.getItem('tarefas');
+     const listaDeTarefas = JSON.parse(tarefas)
+
+     for (let tarefa of listaDeTarefas) {
+          createTask(tarefa);
+     }
+}
+
+addTaskSaves();
