@@ -54,10 +54,10 @@ adicionarTarefaBotao.addEventListener('click', function () {
     criarTarefa(tarefaInput.value);
 })
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const element = e.target;
 
-    if(element.classList.contains('btn-apagar')) {
+    if (element.classList.contains('btn-apagar')) {
         element.parentElement.remove()
     }
 })
