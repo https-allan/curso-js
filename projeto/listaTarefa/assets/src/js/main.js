@@ -27,11 +27,25 @@ function criarTarefa(textoInput) {
 
     criarBotaoApagar(li);
     limpar();
+    salvaDadosLocalStorage();
 }
 
 function limpar() {
     tarefaInput.value = '';
     tarefaInput.focus();
+}
+
+function salvaDadosLocalStorage() {
+    const liTarefa = document.querySelectorAll('li');
+    const listaDeTarefa = [];
+
+    for (let tarefa of liTarefa) {
+        listaDeTarefa.push(tarefa.innerText.replace('Apagar', '').trim())
+
+        const tarefasJson = JSON.stringify(listaDeTarefa);
+        localStorage.setItem('tarefas', tarefaJson);
+    }
+
 }
 
 adicionarTarefaBotao.addEventListener('click', function () {
