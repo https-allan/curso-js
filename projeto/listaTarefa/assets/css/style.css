@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-input {
+  padding: 10px 50px;
+}
+
+.task-input:focus {
+  border: none;
+}
+
+.add-task-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #007bff;
+}
+
+.add-task-btn:hover {
+  background-color: #0056b3;
+}
+
+.task-list {
+  font-family: "Open Sans", sans-serif;
+  list-style: none;
+  padding: 10px;
+}
+
+.btn-apagar {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.4s ease;
+  background-color: #ff4d4d;
+}
+
+.btn-apagar:hover {
+  background-color: #ff6666;
+}
