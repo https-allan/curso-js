@@ -10,27 +10,36 @@ function criarTagLi() {
 }
 
 function criarBotaoApagar(li) {
-    li.innerText += ' ';
-    const button = document.createElement('button');
+    const buttonExcluir = document.createElement('img');
+    buttonExcluir.src = '/projeto/listaTarefa/assets/img/excluir.png';
 
-    button.innerHTML = 'deletar';
-    button.setAttribute('class', 'btn-apagar');
-    li.appendChild(button)
+    buttonExcluir.addEventListener('mouseleave', function () {
+        buttonExcluir.src = '/projeto/listaTarefa/assets/img/excluir.png';
+    });
+
+    buttonExcluir.addEventListener('mouseenter', function () {
+        buttonExcluir.src = '/projeto/listaTarefa/assets/img/excluir2.png';
+    });
+
+    buttonExcluir.setAttribute('class', 'btn-apagar');
+
+    li.appendChild(buttonExcluir);
 }
 
 function criarTarefa(textoInput) {
     const li = criarTagLi();
 
+    li.classList.add('task-item');
     li.innerText = textoInput;
 
     tarefaLista.appendChild(li);
 
     criarBotaoApagar(li);
-    limpar();
+    limparCampo();
     salvaDadosLocalStorage();
 }
 
-function limpar() {
+function limparCampo() {
     tarefaInput.value = '';
     tarefaInput.focus();
 }
@@ -40,12 +49,20 @@ function salvaDadosLocalStorage() {
     const listaDeTarefa = [];
 
     for (let tarefa of liTarefa) {
-        listaDeTarefa.push(tarefa.innerText.replace('Apagar', '').trim())
-
-        const tarefasJson = JSON.stringify(listaDeTarefa);
-        localStorage.setItem('tarefas', tarefaJson);
+        listaDeTarefa.push(tarefa.innerText.replace('deletar', '').trim())
     }
+    const tarefasJson = JSON.stringify(listaDeTarefa);
+    localStorage.setItem('tarefas', tarefasJson);
 
+}
+
+function adicionarTarefaSalva() {
+    const tarefas = localStorage.getItem('tarefas');
+    const listaDeTarefa = JSON.parse(tarefas);
+
+    for (let tarefa of listaDeTarefa) {
+        criarTarefa(tarefa);
+    }
 }
 
 adicionarTarefaBotao.addEventListener('click', function () {
@@ -59,5 +76,8 @@ document.addEventListener('click', function (e) {
 
     if (element.classList.contains('btn-apagar')) {
         element.parentElement.remove()
+        salvaDadosLocalStorage();
     }
 })
+
+adicionarTarefaSalva();
