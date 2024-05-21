@@ -10,4 +10,4 @@
   }
   falaNome()
   console.log(idade, peso, altura);
-})(30, 80, 1.70);
+})(30, 80, 1.70)
