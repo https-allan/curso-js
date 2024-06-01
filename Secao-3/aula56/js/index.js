@@ -1,19 +1,14 @@
 const display = document.querySelector(".display");
 
-function criarCalculadora() {
-  return {
-    press(number) {
-      display.value += number;
-    },
-
-    inicia() {
-      press();
-    },
-  };
+function press(n) {
+  display.value += n;
+}
+function calculate() {
+  const resultado = eval(display.value)
+  display.value += resultado;
 }
 
 const calculadora = criarCalculadora();
-calculadora.inicia()
 
 document.addEventListener("DOMContentLoaded", function () {
   display.value = "";
