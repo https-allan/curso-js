@@ -25,7 +25,7 @@ function Calculadora() {
 
   calculate = () => {
     try {
-      const conta = eval(this.display.value.replace('X', '*'));
+      const conta = eval(this.display.value.replace("X", "*"));
 
       if (!conta) {
         alert("Conta inválida");
